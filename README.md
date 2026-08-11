@@ -7,8 +7,9 @@ The project combines HTML, CSS, and JavaScript to create an interactive visual g
 ---
 
 ## 🚀 Live Demo
+🔗 **[View Live Demo](https://anonymousxop.github.io/CodeAlpha_ImageGallery/)**
 
-Coming soon...
+The project is deployed using GitHub Pages.
 
 ---
 
