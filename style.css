@@ -1,0 +1,773 @@
+/* =========================================
+   GOOGLE FONT
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================
+   CSS VARIABLES
+========================================= */
+
+:root {
+    --cyan: #00FFFF;
+    --cyan-dark: #00cccc;
+
+    --background: #05090d;
+    --background-secondary: #0a1117;
+    --card: #0d161d;
+
+    --white: #ffffff;
+    --text: #d9e2e8;
+    --muted: #7f909c;
+
+    --border: rgba(255, 255, 255, 0.08);
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND EFFECT
+========================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 255, 255, 0.07),
+        transparent 70%
+    );
+
+    top: -250px;
+    right: -200px;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================
+   COMMON
+========================================= */
+
+.cyan-text {
+    color: var(--cyan);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(5, 9, 13, 0.75);
+
+    backdrop-filter: blur(12px);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo-icon {
+    color: var(--cyan);
+    font-size: 24px;
+
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+
+/* Header Tag */
+
+.header-tag {
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: var(--muted);
+
+    padding: 8px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    padding: 100px 20px 70px;
+}
+
+
+/* Eyebrow */
+
+.eyebrow {
+    color: var(--cyan);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Main heading */
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 82px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Cyan heading glow */
+
+.hero h1 .cyan-text {
+    text-shadow:
+        0 0 20px rgba(0, 255, 255, 0.35);
+}
+
+
+/* Description */
+
+.hero-description {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+.gallery-section {
+    width: 86%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding-bottom: 100px;
+}
+
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.filters {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 45px;
+}
+
+.filter-btn {
+    border: 1px solid var(--border);
+
+    background: transparent;
+
+    color: var(--muted);
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+/* Hover */
+
+.filter-btn:hover {
+    color: var(--cyan);
+
+    border-color: rgba(0, 255, 255, 0.5);
+
+    transform: translateY(-2px);
+}
+
+
+/* Active */
+
+.filter-btn.active {
+    background: var(--cyan);
+
+    color: #001414;
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+
+/* =========================================
+   GALLERY GRID
+========================================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   GALLERY CARD
+========================================= */
+
+.gallery-item {
+    position: relative;
+
+    height: 360px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* Card hover */
+
+.gallery-item:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(0, 255, 255, 0.4);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(0, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   GALLERY IMAGE
+========================================= */
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+/* Image hover */
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+
+    filter: brightness(0.7);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(0, 0, 0, 0.85)
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* Show overlay */
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+
+/* Image title */
+
+.gallery-overlay h3 {
+    font-size: 20px;
+
+    margin-bottom: 6px;
+}
+
+
+/* Category */
+
+.gallery-overlay span {
+    color: var(--cyan);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* View icon */
+
+.view-icon {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: var(--cyan);
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    backdrop-filter: blur(15px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+
+    z-index: 1000;
+}
+
+
+/* Active lightbox */
+
+.lightbox.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* Lightbox content */
+
+.lightbox-content {
+    max-width: 1000px;
+
+    width: 90%;
+
+    text-align: center;
+}
+
+
+/* Lightbox image */
+
+.lightbox-content img {
+    max-width: 100%;
+
+    max-height: 75vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 50px rgba(0, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   LIGHTBOX CONTROLS
+========================================= */
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: var(--transition);
+}
+
+
+/* Hover controls */
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--cyan);
+
+    color: #001414;
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.35);
+}
+
+
+/* Close */
+
+.lightbox-close {
+    top: 30px;
+
+    right: 35px;
+}
+
+
+/* Previous */
+
+.lightbox-prev {
+    left: 35px;
+}
+
+
+/* Next */
+
+.lightbox-next {
+    right: 35px;
+}
+
+
+/* =========================================
+   IMAGE INFORMATION
+========================================= */
+
+.image-info {
+    margin-top: 18px;
+
+    position: relative;
+}
+
+.image-info h2 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+.image-info p {
+    color: var(--cyan);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+#imageCounter {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    border-top: 1px solid var(--border);
+
+    padding: 30px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item {
+        height: 320px;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .header-tag {
+        display: none;
+    }
+
+    .hero {
+        padding: 75px 20px 55px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .gallery-section {
+        width: 90%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 380px;
+    }
+
+    .filters {
+        gap: 7px;
+    }
+
+    .filter-btn {
+        padding: 9px 15px;
+
+        font-size: 12px;
+    }
+
+    .lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+    .lightbox-prev {
+        left: 15px;
+    }
+
+    .lightbox-next {
+        right: 15px;
+    }
+
+    .lightbox-close {
+        top: 20px;
+        right: 20px;
+    }
+
+    #imageCounter {
+        position: static;
+
+        display: block;
+
+        margin-top: 8px;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}

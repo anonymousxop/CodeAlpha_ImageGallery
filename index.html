@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A modern responsive image gallery built with HTML, CSS and JavaScript."
+    >
+
+    <title>Neon Gallery | CodeAlpha</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <span>NEON<span class="cyan-text">GALLERY</span></span>
+        </div>
+
+        <div class="header-tag">
+            CODEALPHA PROJECT BY MUHAMMAD WAJAHAT
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+        <!-- Hero Section -->
+
+        <section class="hero">
+
+            <p class="eyebrow">
+                VISUAL COLLECTION
+            </p>
+
+            <h1>
+                Explore the
+                <span class="cyan-text">Extraordinary.</span>
+            </h1>
+
+            <p class="hero-description">
+                A curated collection of photography, technology,
+                architecture and breathtaking destinations.
+            </p>
+
+        </section>
+
+
+        <!-- Category Filters -->
+
+        <section class="gallery-section">
+
+            <div class="filters">
+
+                <button class="filter-btn active" data-category="all">
+                    All
+                </button>
+
+                <button class="filter-btn" data-category="nature">
+                    Nature
+                </button>
+
+                <button class="filter-btn" data-category="architecture">
+                    Architecture
+                </button>
+
+                <button class="filter-btn" data-category="technology">
+                    Technology
+                </button>
+
+                <button class="filter-btn" data-category="travel">
+                    Travel
+                </button>
+
+            </div>
+
+
+            <!-- Gallery -->
+
+            <div class="gallery" id="gallery">
+
+                <!-- Images will be added here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
+
+    <div class="lightbox" id="lightbox">
+
+        <button class="lightbox-close" id="closeBtn">
+            &times;
+        </button>
+
+        <button class="lightbox-prev" id="prevBtn">
+            &#10094;
+        </button>
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt="Gallery preview"
+            >
+
+            <div class="image-info">
+
+                <h2 id="imageTitle">
+                    Image Title
+                </h2>
+
+                <p id="imageCategory">
+                    Category
+                </p>
+
+                <span id="imageCounter">
+                    1 / 1
+                </span>
+
+            </div>
+
+        </div>
+
+        <button class="lightbox-next" id="nextBtn">
+            &#10095;
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Neon Gallery
+        </p>
+
+        <p>
+            Built with
+            <span class="cyan-text">HTML</span>,
+            <span class="cyan-text">CSS</span> &
+            <span class="cyan-text">JavaScript</span>
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
